@@ -506,60 +506,70 @@ bottom: -1px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-input-form{
-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-border: 1px solid #fff;
-border-radius: 4px;
-width: 264px;
-height: 40px;
-font-weight: 400;
-font-size: 12px;
-line-height: 2;
-letter-spacing: 0.04em;
-  background-color: transparent; 
+.footer-input-form {
+  flex-grow: 1;
+  height: 40px;
+  width: 264px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+  padding-left: 16px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
-.footer-label-form{
+.footer-input-form::placeholder {
+  color: #fff;
+}
+
+.footer-label-form {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
+  margin: 0;
 }
 
-.footer-send-btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; 
-  border: none;
-  border-radius: 4px;
-  padding: 8px 24px;
-  width: 165px;
+.footer-send-btn {
+  min-width: 165px;
   height: 40px;
   background-color: #4d5ae5;
   color: #fff;
-  font-weight: 500;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.footer-form-group{
+.footer-input-wrapper {
   display: flex;
-  flex-direction: row; 
   gap: 16px;
   align-items: center;
 }
 
-.footer-modal-form{
+.footer-modal-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 16px; 
+  width: 100%; 
 }
 
-.footer-modal-icon{
-  width: 20px;
-  height: 20px;
+.footer-modal-icon {
   fill: #fff;
+  width: 24px;
+  height: 24px;
 }
 
 .footer-items {
@@ -637,6 +647,11 @@ top: 24px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);           
+}
+
+.modal-close-btn:hover svg,
+.modal-close-btn:focus svg {
+  fill: #ffffff;
 }
 
 .modal-close-btn:hover ,
@@ -729,15 +744,52 @@ top: 24px;
 
 .input-wrapper {
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom:8px;
+
 }
 
+.modal-btn {
+  border-radius: 4px;
+  padding: 16px 32px;
+  width: 169px;
+  height: 56px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background: #4d5ae5;
+  cursor: pointer;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #404bbf; 
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
 .checkbox-label {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
-  color:#8e8f99;
+  color: #8e8f99;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -758,46 +810,18 @@ top: 24px;
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-input:checked ,
- .checkbox-label ,
- .custom-checkbox {
-  background-color:#404bbf;
-  border: none;
-  fill:#f4f4fd;
-}
-
 .checkbox-icon {
   width: 10px;
   height: 8px;
 }
 
-.privacy-link {
-  color:#4d5ae5;
-  text-decoration: underline;
-}
-
-.modal-btn {
-  border-radius: 4px;
-  padding: 16px 32px;
-  width: 169px;
-  height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background: #4d5ae5;
-  cursor: pointer;
-  color: #fff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
+.checkbox-input:checked + .checkbox-label .custom-checkbox {
+  background-color: #404bbf;
   border: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #f4f4fd;
 }
 
-.modal-btn:hover,
-.modal-btn:focus {
-  background-color: #404bbf; 
+.privacy-link {
+  color: #4d5ae5;
+  text-decoration: underline;
 }
